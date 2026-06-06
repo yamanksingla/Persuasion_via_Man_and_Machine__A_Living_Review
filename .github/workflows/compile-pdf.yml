@@ -28,7 +28,6 @@ jobs:
           latexmk_use_lualatex: false
           latexmk_use_xelatex: false
           args: -pdf -interaction=nonstopmode -halt-on-error
-          extra_system_packages: "bibtex"
 
       - name: Commit compiled PDF
         run: |
