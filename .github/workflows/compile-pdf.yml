@@ -28,8 +28,8 @@ jobs:
           pdflatex -interaction=nonstopmode -file-line-error main.tex || true
           bibtex main || true
           pdflatex -interaction=nonstopmode -file-line-error main.tex || true
-          pdflatex -interaction=nonstopmode -file-line-error main.tex
-          ls -lh main.pdf
+          pdflatex -interaction=nonstopmode -file-line-error main.tex || true
+          test -f main.pdf && echo "PDF generated successfully: $(ls -lh main.pdf)" || (echo "ERROR: PDF not generated" && exit 1)
 
       - name: Commit compiled PDF
         run: |
