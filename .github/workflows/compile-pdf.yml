@@ -16,23 +16,26 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/xu-cheng/texlive-full:latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Compile LaTeX
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: main.tex
-          latexmk_use_lualatex: false
-          latexmk_use_xelatex: false
-          args: -pdf -interaction=nonstopmode -halt-on-error
+      - name: Compile LaTeX (pdflatex → bibtex → pdflatex × 2)
+        run: |
+          pdflatex -interaction=nonstopmode -file-line-error main.tex || true
+          bibtex main || true
+          pdflatex -interaction=nonstopmode -file-line-error main.tex || true
+          pdflatex -interaction=nonstopmode -file-line-error main.tex
+          ls -lh main.pdf
 
       - name: Commit compiled PDF
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
           git add main.pdf
           if git diff --staged --quiet; then
             echo "No changes to PDF — skipping commit"
