@@ -1,0 +1,136 @@
+\usepackage{adjustbox}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage[font=footnotesize]{caption}
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage{fancyvrb}
+\usepackage{float}
+%\usepackage[symbol]{footmisc}
+\usepackage{inconsolata} %
+\usepackage{listings}
+\usepackage{longtable}
+\usepackage{makecell}
+\usepackage{mathtools}
+\usepackage{multirow}
+\usepackage{subcaption}
+\usepackage{supertabular}
+\usepackage{tabto}
+\usepackage{tablefootnote}
+\usepackage{tabularx}
+\usepackage{verbatim}
+\usepackage{xfrac}
+\usepackage{xltabular}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\lstset{
+xleftmargin=0pt, %
+basicstyle=\small\ttfamily,
+columns=flexible,
+breaklines=true,
+aboveskip=0pt, %
+belowskip=0pt, %
+framexleftmargin=0pt, %
+}
+
+\newcommand{\cy}[1]{}%
+
+\newenvironment{example}[0]{\begin{Example} \it}{\end{Example}}
+\newenvironment{proof-of}[1]{{\em Proof of #1:}}{}
+
+\newcommand{\nnn}{{\tt \bf  not}}
+
+\def\eg{\emph{e.g}\bmvaOneDot}
+\def\Eg{\emph{E.g}\bmvaOneDot}
+\def\etal{\emph{et al.}\bmvaOneDot}
+
+
+\everypar{\looseness=-1}
+
+\newcommand{\treelogo}{\raisebox{5pt}{\includegraphics[scale=0.050]{images/logos/tree.png}}}
+\newcommand{\iiitdlogo}{\raisebox{5pt}{\includegraphics[scale=0.0113]{images/logos/iiitd-logo.png}}}
+\newcommand{\bitslogo}{\raisebox{5pt}{\includegraphics[scale=0.0080]{images/logos/bits-logo.png}}}
+\newcommand{\ublogo}{\raisebox{5.2pt}
+{\includegraphics[scale=0.085]{images/logos/ub-logo.png}}}
+%\newcommand{\fire}{\raisebox{5pt}{\includegraphics[scale=0.15]{images/logos/fire.png}}}
+\newcommand{\adobelogo}{\raisebox{0pt}{\includegraphics[scale=0.033]{adobe-logo.png}} }
+\newcommand\coauth{$^\star$}
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+\usepackage[skins]{tcolorbox} %
+\newcommand{\best}[1]{\colorbox{black!10}{#1}}
+\definecolor{themegreen}{HTML}{365956}
+\definecolor{themepurple}{HTML}{3c1b48}
+\definecolor{themered}{HTML}{b43748}
+\let\cite\citep
+\definecolor{ForestGreen}{RGB}{34,139,34}
+\definecolor{valbest}{HTML}{d9ead3}
+\newcommand{\valbest}[1]{#1}%
+\definecolor{valgood}{HTML}{d0e0e3}
+\newcommand{\valgood}[1]{#1}%
+\definecolor{valmid}{HTML}{fce5cd}
+\newcommand{\valmid}[1]{\colorbox{valmid}{#1}}
+\definecolor{valbad}{HTML}{ead1dc}
+\newcommand{\valbad}[1]{\colorbox{valbad}{#1}}
+
+
+\usepackage{booktabs} %
+\usepackage{array}    %
+\usepackage{siunitx}  %
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{color, colortbl}
+\definecolor{LightCyan}{rgb}{0.94,1,1}
+\definecolor{LightRed}{rgb}{1,0.94,0.94}
+\definecolor{Gray}{rgb}{0.8,0.8,0.8}
+\definecolor{LightGray}{rgb}{0.92,0.92,0.92}
+\definecolor{LLightGray}{rgb}{0.97,0.97,0.97}
+\definecolor{mygreen}{rgb}{0.4,0.7,0.306}
+\definecolor{myblue}{rgb}{0.294,0.447,0.796}
+\usepackage{hhline}
+\usepackage{nicematrix}
+
+
+
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcommand\Tstrut{\rule{0pt}{2.6ex}}         %
+\newcommand\Bstrut{\rule[-1.3ex]{0pt}{0pt}}   %
+
+\setlist[itemize]{noitemsep, topsep=0pt}
+\setlist[enumerate]{noitemsep, topsep=0pt}
+
+\newcommand{\citeauthorwithyear}[1]{\citeauthor{#1}~\shortcite{#1}}
+\newcommand{\sota}{state-of-the-art}
+\newcommand{\Sota}{State-of-the-art}
+
+\newcommand{\parens}[1]{\left(#1\right)}
+\newcommand{\braces}[1]{\left\{#1\right\}}
+\newcommand{\bracks}[1]{\left[#1\right]}
+\newcommand{\modulus}[1]{\left\vert#1\right\vert}
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+\newcommand{\angular}[1]{\langle#1\rangle}
+\newcommand{\lmod}{\left|\!\left|}
+\newcommand{\rmod}{\right|\!\right|}
+
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+\DeclareMathOperator*{\minimize}{minimize}
+\DeclareMathOperator*{\maximize}{maximize}
+
+\newcommand{\samplei}{^{\parens{i}}}
+\newcommand{\raisedth}[1]{#1^{\textrm{th}}}
+
+\newcommand{\accuracy}{$XX\%$}
